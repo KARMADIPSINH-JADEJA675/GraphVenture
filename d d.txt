@@ -1,0 +1,239 @@
+1. In Dijkstra's Algorithm, what is the computational bottleneck when using a priority queue with a Fibonacci heap?
+
+a) Inserting elements
+
+b) Decreasing key operations
+
+c) Extracting the minimum element
+
+d) Performing union operations
+
+Answer: c) Extracting the minimum element
+
+2. Which of the following is a correct statement regarding Dijkstra's Algorithm in terms of path relaxation?
+
+a) A node’s shortest path estimate decreases in each iteration
+
+b) A node’s shortest path estimate never increases after it’s added to the visited set
+
+c) A node’s shortest path estimate always stays the same
+
+d) A node’s shortest path estimate can increase or decrease randomly
+
+Answer: b) A node’s shortest path estimate never increases after it’s added to the visited set
+
+3. If a graph contains an edge with zero weight, how does this impact Dijkstra's Algorithm?
+
+a) The algorithm will fail
+
+b) The algorithm handles it as a regular edge
+
+c) It will cause an infinite loop
+
+d) It will ignore the zero-weight edge
+
+Answer: b) The algorithm handles it as a regular edge
+
+4. What is the main difference in the implementation of Dijkstra's Algorithm using an adjacency matrix versus an adjacency list?
+
+a) The data structure used for the priority queue
+
+b) The overall space complexity
+
+c) The method of edge relaxation
+
+d) The way distances are updated
+
+Answer: b) The overall space complexity
+
+5. How can Dijkstra's Algorithm be modified to handle directed acyclic graphs (DAGs) more efficiently?
+
+a) By using topological sorting
+
+b) By applying a different priority queue
+
+c) By reversing the edge directions
+
+d) By increasing the edge weights
+
+Answer: a) By using topological sorting
+
+6. When implementing Dijkstra’s Algorithm, how do you efficiently handle graph updates, such as adding or removing edges?
+
+a) Re-run the algorithm from scratch
+
+b) Use a dynamic data structure to maintain shortest paths
+
+c) Ignore the updates
+
+d) Apply Floyd-Warshall Algorithm instead
+
+Answer: b) Use a dynamic data structure to maintain shortest paths
+
+7. How does Dijkstra's Algorithm ensure the correctness of the shortest path in graphs with positive cycles?
+
+a) By resetting all node distances
+
+b) By marking nodes as visited
+
+c) By detecting and ignoring cycles
+
+d) By reprocessing nodes in the cycle
+
+Answer: b) By marking nodes as visited
+
+8. How does the performance of Dijkstra's Algorithm vary with the density of the graph?
+
+a) Better on sparse graphs, worse on dense graphs
+
+b) Better on dense graphs, worse on sparse graphs
+
+c) Equally efficient on both
+
+d) Inefficient on both
+
+Answer: a) Better on sparse graphs, worse on dense graphs
+
+9. In Dijkstra's Algorithm, what happens if the priority queue is implemented with a simple array?
+
+a) The time complexity improves
+
+b) The space complexity increases
+
+c) The algorithm becomes faster
+
+d) The algorithm becomes slower
+
+Answer: d) The algorithm becomes slower
+
+10. Which of the following is NOT true about Dijkstra’s Algorithm?
+
+a) It can be used on both directed and undirected graphs
+
+b) It guarantees the shortest path for graphs with non-negative weights
+
+c) It can handle graphs with negative edge weights
+
+d) It uses a priority queue for efficient edge selection
+
+Answer: c) It can handle graphs with negative edge weights
+
+11. How does Dijkstra's Algorithm determine if a node's shortest path estimate is final?
+
+a) By reaching the destination node
+
+b) By marking the node as visited and removing it from the priority queue
+
+c) By comparing with neighboring nodes
+
+d) By checking all possible paths
+
+Answer: b) By marking the node as visited and removing it from the priority queue
+
+12. What is the impact of adding a new node with multiple edges to an already processed graph using Dijkstra’s Algorithm?
+
+a) It requires reprocessing all nodes
+
+b) It affects only the nodes directly connected to the new node
+
+c) It requires restarting the algorithm
+
+d) It does not affect the existing shortest paths
+
+Answer: b) It affects only the nodes directly connected to the new node
+
+13. Which property of Dijkstra’s Algorithm ensures that once a node is visited, its shortest path distance is final?
+
+a) The use of a priority queue
+
+b) The greedy approach
+
+c) The adjacency matrix representation
+
+d) The dynamic programming principle
+
+Answer: b) The greedy approach
+
+14. In the worst-case scenario, how does Dijkstra's Algorithm handle graphs where all edge weights are the same?
+
+a) It performs optimally
+
+b) It degrades to O(V^2) complexity
+
+c) It fails to compute the shortest paths
+
+d) It behaves like BFS
+
+Answer: d) It behaves like BFS
+
+15. How does Dijkstra's Algorithm differ from A search in terms of pathfinding?*
+
+a) Dijkstra's Algorithm uses a heuristic
+
+b) A* search uses a heuristic to improve efficiency
+
+c) Dijkstra's Algorithm is faster
+
+d) A* search is less accurate
+
+Answer: b) A search uses a heuristic to improve efficiency*
+
+16. How does the graph representation affect the efficiency of Dijkstra’s Algorithm for dense graphs?
+
+a) Using an adjacency list improves efficiency
+
+b) Using an adjacency matrix worsens efficiency
+
+c) It has no impact on efficiency
+
+d) Both representations are equally efficient
+
+Answer: b) Using an adjacency matrix worsens efficiency
+
+17. What approach does Dijkstra’s Algorithm use to relax edges?
+
+a) Updating the shortest path estimate only if a shorter path is found
+
+b) Increasing edge weights iteratively
+
+c) Randomly selecting edges
+
+d) Checking all possible paths
+
+Answer: a) Updating the shortest path estimate only if a shorter path is found
+
+18. In the context of Dijkstra’s Algorithm, what is the significance of the edge relaxation operation?
+
+a) To decrease the edge weights
+
+b) To update the shortest path estimates
+
+c) To remove visited nodes
+
+d) To find negative weight cycles
+
+Answer: b) To update the shortest path estimates
+
+19. Why is Dijkstra's Algorithm not suitable for graphs with negative weight edges?
+
+a) It cannot process negative numbers
+
+b) It may not terminate
+
+c) It may produce incorrect shortest path estimates
+
+d) It cannot handle cyclic graphs
+
+Answer: c) It may produce incorrect shortest path estimates
+
+20. How does Dijkstra’s Algorithm handle multiple paths with the same shortest distance to a node?
+
+a) It stores all paths
+
+b) It picks one arbitrarily
+
+c) It recalculates all paths
+
+d) It merges the paths
+
+Answer: b) It picks one arbitrarily

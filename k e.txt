@@ -1,0 +1,240 @@
+1. What is the main purpose of Kruskal's Algorithm?
+
+a) To find the shortest path in a graph
+
+b) To find the Minimum Spanning Tree
+
+c) To sort edges in non-decreasing order
+
+d) To find the maximum flow in a network
+
+Answer: b) To find the Minimum Spanning Tree
+
+2. In which data structure does Kruskal's Algorithm usually operate?
+
+a) Stack
+
+b) Queue
+
+c) Disjoint-set
+
+d) Binary tree
+
+Answer: c) Disjoint-set
+
+3. Which graph type does Kruskal’s Algorithm work on?
+
+a) Directed graph
+
+b) Undirected graph
+
+c) Both
+
+d) None
+
+Answer: b) Undirected graph
+
+4. What is the first step in Kruskal's Algorithm?
+
+a) Add all edges to the Minimum Spanning Tree
+
+b) Sort edges by weight
+
+c) Initialize all nodes as individual components
+
+d) Select the node with the minimum weight
+
+Answer: b) Sort edges by weight
+
+5. What is used to check if adding an edge creates a cycle in Kruskal's Algorithm?
+
+a) Depth-First Search
+
+b) Breadth-First Search
+
+c) Union-Find data structure
+
+d) Dijkstra’s Algorithm
+
+Answer: c) Union-Find data structure
+
+6. What should be the next edge added to the Minimum Spanning Tree in Kruskal’s Algorithm?
+
+a) The edge with the highest weight
+
+b) Any edge that doesn’t form a cycle
+
+c) The edge with the lowest weight that doesn’t form a cycle
+
+d) The edge with the minimum cost from the source
+
+Answer: c) The edge with the lowest weight that doesn’t form a cycle
+
+7. What is the worst-case time complexity of Kruskal’s Algorithm?
+
+a) O(E log V)
+
+b) O(V^2)
+
+c) O(V log E)
+
+d) O(VE)
+
+Answer: a) O(E log V)
+
+8. How many edges will be there in the Minimum Spanning Tree for a graph with 'n' vertices?
+
+a) n
+
+b) n-1
+
+c) 2n-1
+
+d) n+1
+
+Answer: b) n-1
+
+9. What algorithm helps in managing the connected components in Kruskal's Algorithm?
+
+a) Prim's Algorithm
+
+b) Floyd-Warshall Algorithm
+
+c) Union-Find Algorithm
+
+d) Bellman-Ford Algorithm
+
+Answer: c) Union-Find Algorithm
+
+10. If all edge weights are equal, Kruskal’s Algorithm will produce:
+
+a) No Minimum Spanning Tree
+
+b) Multiple Minimum Spanning Trees
+
+c) A single unique Minimum Spanning Tree
+
+d) A Maximum Spanning Tree
+
+Answer: b) Multiple Minimum Spanning Trees
+
+11. How does Kruskal’s Algorithm handle disconnected graphs?
+
+a) It finds Minimum Spanning Trees for each connected component
+
+b) It does not work with disconnected graphs
+
+c) It connects the components to form a single spanning tree
+
+d) It removes all isolated vertices
+
+Answer: a) It finds Minimum Spanning Trees for each connected component
+
+12. What happens if Kruskal’s Algorithm cannot find a spanning tree?
+
+a) Returns an empty set
+
+b) Adds virtual edges to connect all vertices
+
+c) Indicates the graph is disconnected
+
+d) Adds all edges of the graph to the tree
+
+Answer: c) Indicates the graph is disconnected
+
+13. What type of edge does Kruskal’s Algorithm select at each step?
+
+a) The edge connecting the most vertices
+
+b) The edge with the smallest weight
+
+c) The edge in the shortest path
+
+d) The edge with the maximum weight
+
+Answer: b) The edge with the smallest weight
+
+14. How are the edges of the graph sorted in Kruskal’s Algorithm?
+
+a) By vertex labels
+
+b) By edge weight
+
+c) By graph degree
+
+d) By adjacency list order
+
+Answer: b) By edge weight
+
+15. Which other popular algorithm also finds the Minimum Spanning Tree?
+
+a) Dijkstra's Algorithm
+
+b) Floyd-Warshall Algorithm
+
+c) Prim's Algorithm
+
+d) Bellman-Ford Algorithm
+
+Answer: c) Prim's Algorithm
+
+16. Can Kruskal's Algorithm be used with negative weight edges?
+
+a) Yes
+
+b) No
+
+c) Only if all weights are negative
+
+d) Only if no cycles exist
+
+Answer: a) Yes
+
+17. What does Kruskal's Algorithm prioritize in its selection process?
+
+a) Node degree
+
+b) Edge weight
+
+c) Path length
+
+d) Node distance
+
+Answer: b) Edge weight
+
+18. In what scenario does Kruskal’s Algorithm become inefficient?
+
+a) When the graph is sparse
+
+b) When the graph is dense
+
+c) When all edges have the same weight
+
+d) When the graph is undirected
+
+Answer: b) When the graph is dense
+
+19. How is the Minimum Spanning Tree represented after running Kruskal's Algorithm?
+
+a) As a list of nodes
+
+b) As a list of edges
+
+c) As an adjacency matrix
+
+d) As an incidence matrix
+
+Answer: b) As a list of edges
+
+20. Why is Kruskal's Algorithm preferred in distributed systems?
+
+a) It's faster than Prim's Algorithm
+
+b) It can handle negative weights
+
+c) It works well with disconnected graphs
+
+d) It processes edge-based selections which can be parallelized
+
+Answer: d) It processes edge-based selections which can be parallelized
+

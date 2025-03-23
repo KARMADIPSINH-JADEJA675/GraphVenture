@@ -1,0 +1,239 @@
+1. Which data structure is crucial for Kruskal’s Algorithm to function efficiently?
+
+a) Priority Queue
+
+b) Disjoint-set
+
+c) Stack
+
+d) Graph
+
+Answer: b) Disjoint-set
+
+2. When sorting edges by weight in Kruskal’s Algorithm, which sorting algorithm can be most efficient?
+
+a) Quick Sort
+
+b) Merge Sort
+
+c) Heap Sort
+
+d) All of the above
+
+Answer: d) All of the above
+
+3. What is the role of the union-find data structure in Kruskal’s Algorithm?
+
+a) To detect cycles
+
+b) To find the shortest path
+
+c) To optimize edge selection
+
+d) To manage components
+
+Answer: a) To detect cycles
+
+4. How does Kruskal’s Algorithm decide which edge to add next?
+
+a) By vertex degree
+
+b) By edge weight
+
+c) By path length
+
+d) By node connectivity
+
+Answer: b) By edge weight
+
+5. What operation is repeatedly performed in Kruskal’s Algorithm to ensure no cycles are formed?
+
+a) Path compression
+
+b) Union by rank
+
+c) Find and union operations
+
+d) Edge sorting
+
+Answer: c) Find and union operations
+
+6. In a graph with 'n' vertices and 'e' edges, what is the maximum number of edges that can be part of the Minimum Spanning Tree?
+
+a) e
+
+b) n-1
+
+c) n
+
+d) e-1
+
+Answer: b) n-1
+
+7. How does Kruskal’s Algorithm handle parallel edges between two vertices?
+
+a) It includes both edges
+
+b) It picks the edge with the lower weight
+
+c) It ignores both edges
+
+d) It chooses randomly
+
+Answer: b) It picks the edge with the lower weight
+
+8. In the context of Kruskal’s Algorithm, what is the significance of the union operation?
+
+a) It connects two components into one
+
+b) It finds the shortest path
+
+c) It updates edge weights
+
+d) It marks vertices as visited
+
+Answer: a) It connects two components into one
+
+9. Why does Kruskal’s Algorithm sort the edges before processing them?
+
+a) To ensure the minimum cost
+
+b) To make the algorithm faster
+
+c) To detect cycles easily
+
+d) To simplify the union-find operations
+
+Answer: a) To ensure the minimum cost
+
+10. In what scenario would Kruskal’s Algorithm be preferred over Prim’s Algorithm?
+
+a) Dense graph
+
+b) Sparse graph
+
+c) Directed graph
+
+d) Graph with negative weights
+
+Answer: b) Sparse graph
+
+11. What condition is checked before adding an edge to the Minimum Spanning Tree in Kruskal's Algorithm?
+
+a) The edge does not decrease the total weight
+
+b) The edge does not form a cycle
+
+c) The edge connects all components
+
+d) The edge is the longest in the graph
+
+Answer: b) The edge does not form a cycle
+
+12. How does Kruskal's Algorithm handle disconnected graphs?
+
+a) It connects all components with virtual edges
+
+b) It creates a forest of Minimum Spanning Trees
+
+c) It combines components randomly
+
+d) It fails to execute
+
+Answer: b) It creates a forest of Minimum Spanning Trees
+
+13. If Kruskal's Algorithm produces a cycle while adding an edge, what should be done?
+
+a) Add the edge anyway
+
+b) Skip the edge
+
+c) Reverse the edge
+
+d) Restart the algorithm
+
+Answer: b) Skip the edge
+
+14. What is the role of path compression in the union-find data structure used by Kruskal's Algorithm?
+
+a) To flatten the tree structure
+
+b) To increase the tree height
+
+c) To simplify edge sorting
+
+d) To detect multiple cycles
+
+Answer: a) To flatten the tree structure
+
+15. How does Kruskal's Algorithm differ from Prim's Algorithm in terms of edge selection?
+
+a) Kruskal's selects edges by increasing order of weight
+
+b) Kruskal's selects edges connected to the growing MST
+
+c) Kruskal's prefers edges with higher weights
+
+d) Kruskal's ignores edge weights
+
+Answer: a) Kruskal's selects edges by increasing order of weight
+
+16. Why is the union-by-rank technique used in the union-find data structure?
+
+a) To speed up edge sorting
+
+b) To minimize the height of the trees
+
+c) To ensure all edges are processed
+
+d) To maintain cycle detection
+
+Answer: b) To minimize the height of the trees
+
+17. What happens when two components are merged in Kruskal's Algorithm?
+
+a) The components become disconnected
+
+b) The edge between them is removed
+
+c) The edge connecting them is added to the MST
+
+d) The total weight of the MST decreases
+
+Answer: c) The edge connecting them is added to the MST
+
+18. If an edge is not added to the MST due to cycle formation, what does this indicate?
+
+a) The edge is the longest in the graph
+
+b) The edge connects already connected vertices
+
+c) The edge is redundant
+
+d) The edge has the highest weight
+
+Answer: b) The edge connects already connected vertices
+
+19. How does Kruskal's Algorithm ensure that the final solution is a Minimum Spanning Tree?
+
+a) By only adding edges that reduce the total weight
+
+b) By maintaining a forest of disjoint sets
+
+c) By connecting all vertices with minimum cost
+
+d) By avoiding cycles and using minimum weight edges
+
+Answer: d) By avoiding cycles and using minimum weight edges
+
+20. What is the primary criterion for selecting edges in Kruskal's Algorithm?
+
+a) Vertex degree
+
+b) Edge length
+
+c) Edge weight
+
+d) Path length
+
+Answer: c) Edge weight

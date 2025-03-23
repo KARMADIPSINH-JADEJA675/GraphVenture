@@ -1,0 +1,239 @@
+1. What is the main purpose of Dijkstra's Algorithm?
+
+a) To find the shortest path from a source node to all other nodes
+
+b) To find the minimum spanning tree
+
+c) To sort edges in a graph
+
+d) To detect cycles in a graph
+
+Answer: a) To find the shortest path from a source node to all other nodes
+
+2. Dijkstra's Algorithm works only with:
+
+a) Graphs with negative weights
+
+b) Directed graphs
+
+c) Graphs with non-negative weights
+
+d) Undirected graphs
+
+Answer: c) Graphs with non-negative weights
+
+3. Which data structure is commonly used to implement Dijkstra's Algorithm efficiently?
+
+a) Stack
+
+b) Queue
+
+c) Priority Queue
+
+d) Linked List
+
+Answer: c) Priority Queue
+
+4. What is the initial value of the distance to the source node in Dijkstra's Algorithm?
+
+a) Infinity
+
+b) 0
+
+c) -1
+
+d) 1
+
+Answer: b) 0
+
+5. Which of the following does Dijkstra's Algorithm use to keep track of the shortest path estimates?
+
+a) Adjacency Matrix
+
+b) Distance Matrix
+
+c) Distance Vector
+
+d) Edge List
+
+Answer: c) Distance Vector
+
+6. When does Dijkstra’s Algorithm terminate?
+
+a) When all nodes are visited
+
+b) When the destination node is reached
+
+c) When all shortest paths are found
+
+d) When the graph is fully traversed
+
+Answer: a) When all nodes are visited
+
+7. What happens if Dijkstra's Algorithm encounters a node that has already been visited?
+
+a) It updates the node again
+
+b) It skips the node
+
+c) It restarts the algorithm
+
+d) It removes the node
+
+Answer: b) It skips the node
+
+8. What is the time complexity of Dijkstra’s Algorithm with a priority queue?
+
+a) O(V^2)
+
+b) O(E log V)
+
+c) O(V log E)
+
+d) O(E)
+
+Answer: b) O(E log V)
+
+9. In which scenario can Dijkstra’s Algorithm provide incorrect results?
+
+a) Graph with cycles
+
+b) Graph with negative weights
+
+c) Graph with undirected edges
+
+d) Graph with multiple components
+
+Answer: b) Graph with negative weights
+
+10. What is the shortest path tree in the context of Dijkstra's Algorithm?
+
+a) A tree with the minimum total weight
+
+b) A tree containing the shortest paths from the source to all other nodes
+
+c) A tree containing the maximum weight paths
+
+d) A tree covering all nodes with direct edges
+
+Answer: b) A tree containing the shortest paths from the source to all other nodes
+
+11. What type of graph representation can be used with Dijkstra’s Algorithm?
+
+a) Adjacency List
+
+b) Adjacency Matrix
+
+c) Edge List
+
+d) All of the above
+
+Answer: d) All of the above
+
+12. What is the main limitation of Dijkstra’s Algorithm?
+
+a) It only works with directed graphs
+
+b) It cannot handle negative weight edges
+
+c) It is not suitable for dense graphs
+
+d) It requires a minimum spanning tree
+
+Answer: b) It cannot handle negative weight edges
+
+13. What property must a graph have for Dijkstra’s Algorithm to guarantee the correct shortest path?
+
+a) All edges must be equal
+
+b) The graph must be connected
+
+c) All edge weights must be non-negative
+
+d) The graph must be a tree
+
+Answer: c) All edge weights must be non-negative
+
+14. What does Dijkstra’s Algorithm use to determine the next node to process?
+
+a) Depth-First Search
+
+b) Breadth-First Search
+
+c) Current shortest known distance
+
+d) Random selection
+
+Answer: c) Current shortest known distance
+
+15. What initial distance values are assigned to all nodes except the source node in Dijkstra's Algorithm?
+
+a) 0
+
+b) Infinity
+
+c) -1
+
+d) 1
+
+Answer: b) Infinity
+
+16. Which famous algorithm is used to update the shortest path estimates in Dijkstra's Algorithm?
+
+a) Floyd-Warshall Algorithm
+
+b) Bellman-Ford Algorithm
+
+c) Greedy Algorithm
+
+d) Union-Find Algorithm
+
+Answer: c) Greedy Algorithm
+
+17. In the final solution of Dijkstra's Algorithm, what does the distance vector represent?
+
+a) Shortest path from the source to all other nodes
+
+b) Total weight of the Minimum Spanning Tree
+
+c) Number of edges in the shortest path
+
+d) Degree of each node
+
+Answer: a) Shortest path from the source to all other nodes
+
+18. How does Dijkstra’s Algorithm handle ties when two nodes have the same shortest distance?
+
+a) It processes both nodes simultaneously
+
+b) It arbitrarily picks one node
+
+c) It restarts the algorithm
+
+d) It skips both nodes
+
+Answer: b) It arbitrarily picks one node
+
+19. What is the purpose of updating the priority queue in Dijkstra’s Algorithm?
+
+a) To maintain the order of nodes to be processed based on their current shortest distance
+
+b) To remove all visited nodes
+
+c) To store all unvisited nodes
+
+d) To increase the processing speed
+
+Answer: a) To maintain the order of nodes to be processed based on their current shortest distance
+
+20. How does Dijkstra's Algorithm ensure that a node's shortest path is found?
+
+a) By revisiting nodes multiple times
+
+b) By maintaining and updating the distance vector
+
+c) By using a depth-first search approach
+
+d) By excluding all direct edges
+
+Answer: b) By maintaining and updating the distance vector

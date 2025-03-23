@@ -1,0 +1,239 @@
+1. How does Dijkstra's Algorithm update the shortest path estimates for each vertex?
+
+a) Using Depth-First Search
+
+b) By recalculating distances from the source
+
+c) By relaxing the edges
+
+d) By checking all possible paths
+
+Answer: c) By relaxing the edges
+
+2. Which type of graph representation is most efficient for implementing Dijkstra’s Algorithm on a sparse graph?
+
+a) Adjacency Matrix
+
+b) Adjacency List
+
+c) Edge List
+
+d) Incidence Matrix
+
+Answer: b) Adjacency List
+
+3. What additional data structure is often used alongside the Priority Queue in Dijkstra's Algorithm?
+
+a) Stack
+
+b) Set
+
+c) Hash Map
+
+d) Linked List
+
+Answer: c) Hash Map
+
+4. When using a Priority Queue, what is the key criteria for selecting the next node to process in Dijkstra's Algorithm?
+
+a) Node degree
+
+b) Edge count
+
+c) Current shortest distance
+
+d) Node ID
+
+Answer: c) Current shortest distance
+
+5. What kind of problem does Dijkstra's Algorithm solve?
+
+a) Single-source shortest path problem
+
+b) All-pairs shortest path problem
+
+c) Maximum flow problem
+
+d) Minimum spanning tree problem
+
+Answer: a) Single-source shortest path problem
+
+6. What is the initial distance value for all vertices except the source in Dijkstra’s Algorithm?
+
+a) -1
+
+b) 0
+
+c) Infinity
+
+d) Maximum edge weight
+
+Answer: c) Infinity
+
+7. How does Dijkstra's Algorithm handle graphs with multiple shortest paths of the same length?
+
+a) It records all possible paths
+
+b) It arbitrarily chooses one path
+
+c) It only considers paths with fewer edges
+
+d) It fails to process such graphs
+
+Answer: b) It arbitrarily chooses one path
+
+8. What operation is performed when an adjacent node's shortest path estimate is updated in Dijkstra’s Algorithm?
+
+a) Union
+
+b) Relaxation
+
+c) Compression
+
+d) Sorting
+
+Answer: b) Relaxation
+
+9. What is the key difference between Dijkstra’s Algorithm and Bellman-Ford Algorithm?
+
+a) Dijkstra's Algorithm can handle negative weights
+
+b) Bellman-Ford Algorithm only works on undirected graphs
+
+c) Dijkstra’s Algorithm is faster but cannot handle negative weights
+
+d) Bellman-Ford Algorithm uses a priority queue
+
+Answer: c) Dijkstra’s Algorithm is faster but cannot handle negative weights
+
+10. Which step ensures the shortest path estimate is not changed once a node is processed in Dijkstra's Algorithm?
+
+a) Marking the node as visited
+
+b) Removing the node from the priority queue
+
+c) Recalculating all distances
+
+d) Merging all paths
+
+Answer: a) Marking the node as visited
+
+11. How does Dijkstra’s Algorithm perform on a graph with uniform edge weights?
+
+a) The algorithm performs optimally
+
+b) The algorithm performs poorly
+
+c) The algorithm cannot process such graphs
+
+d) The performance is unaffected
+
+Answer: a) The algorithm performs optimally
+
+12. In Dijkstra’s Algorithm, how is the shortest path tree different from the Minimum Spanning Tree?
+
+a) It considers edge weights
+
+b) It covers all nodes
+
+c) It is rooted at the source node
+
+d) It does not include all edges
+
+Answer: c) It is rooted at the source node
+
+13. What is the role of the priority queue in Dijkstra's Algorithm?
+
+a) To store all edges
+
+b) To manage the order of node processing
+
+c) To maintain visited nodes
+
+d) To track cycle formation
+
+Answer: b) To manage the order of node processing
+
+14. What is the effect of negative edge weights on Dijkstra's Algorithm?
+
+a) It speeds up the algorithm
+
+b) It invalidates the shortest path computation
+
+c) It simplifies the algorithm
+
+d) It has no effect
+
+Answer: b) It invalidates the shortest path computation
+
+15. How does Dijkstra's Algorithm determine the next node to process after updating shortest path estimates?
+
+a) By selecting the unvisited node with the smallest current distance estimate
+
+b) By selecting the node with the highest degree
+
+c) By selecting nodes in random order
+
+d) By selecting the last node added to the priority queue
+
+Answer: a) By selecting the unvisited node with the smallest current distance estimate
+
+16. What happens if there are multiple nodes with the same shortest distance in Dijkstra’s Algorithm?
+
+a) The algorithm processes all nodes simultaneously
+
+b) It arbitrarily selects one node to process next
+
+c) It recalculates all distances
+
+d) It skips these nodes
+
+Answer: b) It arbitrarily selects one node to process next
+
+17. Which condition ensures that Dijkstra's Algorithm correctly finds the shortest path from the source to all other nodes?
+
+a) The graph is directed
+
+b) All edge weights are non-negative
+
+c) The graph contains no cycles
+
+d) The graph is fully connected
+
+Answer: b) All edge weights are non-negative
+
+18. What is the significance of the "visited" set in Dijkstra’s Algorithm?
+
+a) To store the shortest path tree
+
+b) To track nodes that have been processed
+
+c) To keep a list of all edges
+
+d) To identify cycle formation
+
+Answer: b) To track nodes that have been processed
+
+19. In Dijkstra’s Algorithm, how are the shortest paths from the source node reconstructed?
+
+a) By traversing the shortest path tree
+
+b) By following back-pointers from each node
+
+c) By recalculating all shortest paths
+
+d) By using depth-first search
+
+Answer: b) By following back-pointers from each node
+
+20. Why is Dijkstra's Algorithm often faster on sparse graphs compared to dense graphs?
+
+a) Fewer nodes need to be visited
+
+b) There are fewer edges to process
+
+c) Node degrees are lower
+
+d) The priority queue operates more efficiently
+
+Answer: b) There are fewer edges to process

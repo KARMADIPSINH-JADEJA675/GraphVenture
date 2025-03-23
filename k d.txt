@@ -1,0 +1,239 @@
+1. In Kruskal's Algorithm, what is the most crucial reason for using a Union-Find data structure?
+
+a) To optimize edge sorting
+
+b) To manage component sizes
+
+c) To maintain a dynamic set of disjoint sets and detect cycles
+
+d) To store graph vertices
+
+Answer: c) To maintain a dynamic set of disjoint sets and detect cycles
+
+2. How does the efficiency of Kruskal’s Algorithm vary with different implementations of the Union-Find data structure?
+
+a) The efficiency is constant
+
+b) It is unaffected by the implementation
+
+c) It improves significantly with union by rank and path compression
+
+d) It worsens with more sophisticated implementations
+
+Answer: c) It improves significantly with union by rank and path compression
+
+3. When analyzing Kruskal's Algorithm, which part is most computationally expensive?
+
+a) Sorting the edges
+
+b) Finding the minimum edge
+
+c) Performing union operations
+
+d) Checking for cycles
+
+Answer: a) Sorting the edges
+
+4. What is the lower bound for the time complexity of Kruskal’s Algorithm in the best-case scenario?
+
+a) O(E log V)
+
+b) O(V log E)
+
+c) O(E)
+
+d) O(V^2)
+
+Answer: a) O(E log V)
+
+5. How does the edge list representation of a graph benefit Kruskal’s Algorithm?
+
+a) It simplifies cycle detection
+
+b) It accelerates the edge sorting process
+
+c) It reduces the overall time complexity
+
+d) It minimizes memory usage
+
+Answer: b) It accelerates the edge sorting process
+
+6. What characteristic of Kruskal's Algorithm makes it suitable for parallel processing?
+
+a) Edge-based selection allows independent processing
+
+b) Its reliance on vertex degrees
+
+c) The use of a sequential edge processing
+
+d) The union-find operations being inherently sequential
+
+Answer: a) Edge-based selection allows independent processing
+
+7. During Kruskal's Algorithm, why must edges be processed in non-decreasing order of weight?
+
+a) To maintain acyclicity
+
+b) To ensure minimal connectivity
+
+c) To guarantee the Minimum Spanning Tree has the least weight
+
+d) To simplify the union-find operations
+
+Answer: c) To guarantee the Minimum Spanning Tree has the least weight
+
+8. If Kruskal's Algorithm is applied to a graph with negative weight edges, how are the edges handled?
+
+a) Negative weight edges are ignored
+
+b) Negative weight edges are processed first
+
+c) They are treated the same as any other edge
+
+d) The algorithm fails
+
+Answer: c) They are treated the same as any other edge
+
+9. In Kruskal's Algorithm, what is the impact of edge weight distribution on its performance?
+
+a) No impact
+
+b) Reduced complexity with uniform weights
+
+c) Increased complexity with clustered weights
+
+d) Increased complexity with widely varying weights
+
+Answer: b) Reduced complexity with uniform weights
+
+10. Why is it essential for the Union-Find data structure to support both union and find operations efficiently in Kruskal's Algorithm?
+
+a) To minimize memory usage
+
+b) To ensure edges are processed in order
+
+c) To detect and manage cycles efficiently
+
+d) To maintain the sorted order of edges
+
+Answer: c) To detect and manage cycles efficiently
+
+11. How does Kruskal's Algorithm behave when encountering a graph with multiple components?
+
+a) It connects all components with virtual edges
+
+b) It skips components and focuses on the largest one
+
+c) It forms a Minimum Spanning Forest for all components
+
+d) It treats the graph as a single connected component
+
+Answer: c) It forms a Minimum Spanning Forest for all components
+
+12. What is the significance of using path compression in the union-find data structure within Kruskal's Algorithm?
+
+a) To maintain sorted edge order
+
+b) To reduce the height of the trees
+
+c) To ensure all vertices are processed
+
+d) To merge components quickly
+
+Answer: b) To reduce the height of the trees
+
+13. During Kruskal's Algorithm, how are cycles effectively detected and prevented?
+
+a) By checking vertex degrees
+
+b) By sorting edges
+
+c) By using the union-find data structure
+
+d) By counting edge weights
+
+Answer: c) By using the union-find data structure
+
+14. What factor primarily influences the space complexity of Kruskal’s Algorithm?
+
+a) Number of vertices
+
+b) Number of edges
+
+c) Graph density
+
+d) Sorting technique used
+
+Answer: b) Number of edges
+
+15. How does the inclusion of parallel edges affect the execution of Kruskal’s Algorithm?
+
+a) Decreases the overall time complexity
+
+b) Simplifies the edge selection process
+
+c) Increases the potential for cycles
+
+d) Requires additional handling in union-find operations
+
+Answer: c) Increases the potential for cycles
+
+16. Why does Kruskal's Algorithm run efficiently on sparse graphs?
+
+a) Because it only processes vertices
+
+b) Because the number of edges is significantly lower than vertices
+
+c) Because edge sorting is quicker with fewer edges
+
+d) Because union-find operations are reduced
+
+Answer: c) Because edge sorting is quicker with fewer edges
+
+17. How does Kruskal's Algorithm ensure all vertices are included in the final MST?
+
+a) By ensuring no vertex is isolated
+
+b) By iterating through all edges
+
+c) By checking all vertices are visited
+
+d) By connecting isolated vertices with dummy edges
+
+Answer: b) By iterating through all edges
+
+18. In Kruskal's Algorithm, what is the effect of using union-by-rank on the performance of union operations?
+
+a) Increases the number of unions required
+
+b) Balances the tree height, reducing time complexity
+
+c) Does not affect the performance
+
+d) Increases the complexity of cycle detection
+
+Answer: b) Balances the tree height, reducing time complexity
+
+19. How does the presence of cycles in the graph affect the operations of Kruskal’s Algorithm?
+
+a) Cycles are ignored during execution
+
+b) Cycles increase the complexity of edge sorting
+
+c) Cycles require additional checking in union-find
+
+d) Cycles necessitate re-evaluation of edge weights
+
+Answer: c) Cycles require additional checking in union-find
+
+20. What is the significance of the cut property in the context of Kruskal's Algorithm?
+
+a) It dictates edge sorting order
+
+b) It ensures the inclusion of all vertices
+
+c) It guarantees the selection of safe edges
+
+d) It manages disjoint sets
+
+Answer: c) It guarantees the selection of safe edges
