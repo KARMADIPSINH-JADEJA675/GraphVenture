@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1s ease;
+            background: linear-gradient(45deg, #000, #555);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.5s ease;
+            max-width: 300px; /* Limit width for better appearance */
+            width: 100%;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Space below the title */
+            color: white; /* Title color */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin: 10px 0; /* Space between input fields */
+            width: 100%; /* Full width for inputs */
+            border: 2px solid #fff;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #f0f0f0;
+            box-shadow: 0 0 5px rgba(240, 240, 240, 0.5);
+            outline: none;
+            transform: scale(1.05);
+        }
+
+        button {
+            padding: 10px 15px;
+            background: linear-gradient(45deg, #222, #444);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.4s ease, transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin: 10px 0; /* Space above and below button */
+            width: 100%; /* Full width for button */
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #444, #222);
+            transform: scale(1.05);
+            animation: pulse 0.5s infinite; /* Add pulse animation on hover */
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease;
+            z-index: 0;
+        }
+
+        button:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #f0f0f0;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin: 10px 0; /* Space above and below checkbox */
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="{{ url_for('login') }}">
+        <h1>Login</h1> <!-- Title moved inside the form -->
+       
+        <input type="text" name="username" placeholder="Username" required value="{{ request.cookies.get('username', '') }}">
+        <input type="password" name="password" placeholder="Password" required value="{{ request.cookies.get('password', '') }}">
+        <button type="submit">Login</button>
+        <div class="remember-me">
+            <label style="color: white;">
+                <input type="checkbox" name="remember" {% if request.cookies.get('username') %}checked{% endif %} style="accent-color: #fff;">
+                Remember Me
+            </label>
+            
+        </div>
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+    </form>
+</body>
+</html>

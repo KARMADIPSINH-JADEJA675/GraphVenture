@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Quizzes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            animation: fadeIn 1s ease;
+            background: linear-gradient(45deg, #6ab04c, #f79f1f);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1, h2 {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3);
+        }
+
+        .quiz-container {
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .active {
+            display: block;
+            opacity: 1;
+        }
+
+        .question {
+            margin-bottom: 15px;
+            font-weight: bold;
+            animation: slideIn 0.5s ease;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 0, 255, 0.5);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(45deg, #28a745, #218838);
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        }
+
+        a:hover {
+            background: linear-gradient(45deg, #218838, #28a745);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        #quizSelector {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #6ab04c, #f79f1f);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            outline: none; /* Remove default outline */
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        }
+
+        #quizSelector:hover {
+            background: linear-gradient(135deg, #f79f1f, #6ab04c);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        #quizSelector:focus {
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Focus effect */
+        }
+    </style>
+    <script>
+        function calculateScore() {
+            const dijkstraAnswers = {
+                1: 'B', 2: 'D', 3: 'D', 4: 'B', 5: 'B',
+                6: 'B', 7: 'A', 8: 'B', 9: 'A', 10: 'C',
+                11: 'A', 12: 'C' // Added questions
+            };
+
+            const kruskalAnswers = {
+                1: 'B', 2: 'A', 3: 'D', 4: 'A', 5: 'B',
+                6: 'B', 7: 'B', 8: 'B', 9: 'C', 10: 'B' // Added questions
+            };
+
+            let score = 0;
+
+            // Calculate Dijkstra's score
+            for (let i = 1; i <= 12; i++) {
+                const selectedOption = document.querySelector(`input[name="dijkstraQuestion${i}"]:checked`);
+                if (selectedOption && selectedOption.value === dijkstraAnswers[i]) {
+                    score++;
+                }
+            }
+            
+            // Calculate Kruskal's score
+            for (let i = 1; i <= 10; i++) {
+                const selectedOption = document.querySelector(`input[name="kruskalQuestion${i}"]:checked`);
+                if (selectedOption && selectedOption.value === kruskalAnswers[i]) {
+                    score++;
+                }
+            }
+
+            alert(`Your total score is: ${score} out of 22`);
+        }
+
+        function toggleQuiz() {
+            const dijkstraQuiz = document.getElementById('dijkstraQuiz');
+            const kruskalQuiz = document.getElementById('kruskalQuiz');
+            const selectedQuiz = document.getElementById('quizSelector').value;
+
+            if (selectedQuiz === 'dijkstra') {
+                dijkstraQuiz.classList.add('active');
+                kruskalQuiz.classList.remove('active');
+            } else {
+                kruskalQuiz.classList.add('active');
+                dijkstraQuiz.classList.remove('active');
+            }
+        }
+
+        window.onload = function() {
+            toggleQuiz(); // Initialize to show the default quiz
+        }
+    </script>
+</head>
+<body>
+    <h1>Quizzes Page</h1>
+    <p>Here you can take quizzes!</p>
+
+    <label for="quizSelector">Choose a quiz:</label>
+    <select id="quizSelector" onchange="toggleQuiz()">
+        <option value="dijkstra">Dijkstra's Algorithm</option>
+        <option value="kruskal">Kruskal's Algorithm</option>
+    </select>
+
+    <div id="dijkstraQuiz" class="quiz-container active">
+        <h2>Dijkstra's Algorithm Quiz</h2>
+        <div class="question">1. What is Dijkstra's Algorithm used for?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion1" value="A"> A) Sorting a list of numbers<br>
+            <input type="radio" name="dijkstraQuestion1" value="B"> B) Finding the shortest path in a graph<br>
+            <input type="radio" name="dijkstraQuestion1" value="C"> C) Finding the maximum flow in a network<br>
+            <input type="radio" name="dijkstraQuestion1" value="D"> D) Clustering data points
+        </div>
+        <div class="question">2. What type of graph can Dijkstra's Algorithm be applied to?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion2" value="A"> A) Undirected graph with negative weights<br>
+            <input type="radio" name="dijkstraQuestion2" value="B"> B) Directed graph with negative weights<br>
+            <input type="radio" name="dijkstraQuestion2" value="C"> C) Undirected graph without weights<br>
+            <input type="radio" name="dijkstraQuestion2" value="D"> D) Weighted graphs with non-negative weights
+        </div>
+        <div class="question">3. Which of the following is true about Dijkstra's Algorithm?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion3" value="A"> A) It can return multiple paths<br>
+            <input type="radio" name="dijkstraQuestion3" value="B"> B) It always finds the shortest path<br>
+            <input type="radio" name="dijkstraQuestion3" value="C"> C) It cannot handle negative weights<br>
+            <input type="radio" name="dijkstraQuestion3" value="D"> D) All of the above
+        </div>
+        <div class="question">4. What is the time complexity of Dijkstra's Algorithm using a priority queue?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion4" value="A"> A) O(V^2)<br>
+            <input type="radio" name="dijkstraQuestion4" value="B"> B) O((V + E) log V)<br>
+            <input type="radio" name="dijkstraQuestion4" value="C"> C) O(E log V)<br>
+            <input type="radio" name="dijkstraQuestion4" value="D"> D) O(V log E)
+        </div>
+        <div class="question">5. Which data structure is primarily used in Dijkstra's Algorithm?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion5" value="A"> A) Array<br>
+            <input type="radio" name="dijkstraQuestion5" value="B"> B) Min-Heap<br>
+            <input type="radio" name="dijkstraQuestion5" value="C"> C) Stack<br>
+            <input type="radio" name="dijkstraQuestion5" value="D"> D) Queue
+        </div>
+        <div class="question">6. In what scenario is Dijkstra's Algorithm guaranteed to work?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion6" value="A"> A) Graph with negative cycles<br>
+            <input type="radio" name="dijkstraQuestion6" value="B"> B) Graph with no negative edges<br>
+            <input type="radio" name="dijkstraQuestion6" value="C"> C) Graph with all positive weights<br>
+            <input type="radio" name="dijkstraQuestion6" value="D"> D) Both B and C
+        </div>
+        <div class="question">7. Which of the following statements is correct?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion7" value="A"> A) Dijkstra's Algorithm uses Depth-First Search<br>
+            <input type="radio" name="dijkstraQuestion7" value="B"> B) Dijkstra's Algorithm uses Breadth-First Search<br>
+            <input type="radio" name="dijkstraQuestion7" value="C"> C) Dijkstra's Algorithm uses Dynamic Programming<br>
+            <input type="radio" name="dijkstraQuestion7" value="D"> D) None of the above
+        </div>
+        <div class="question">8. Dijkstra's Algorithm guarantees the shortest path in:</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion8" value="A"> A) All graphs<br>
+            <input type="radio" name="dijkstraQuestion8" value="B"> B) Only directed graphs<br>
+            <input type="radio" name="dijkstraQuestion8" value="C"> C) Only graphs without negative edges<br>
+            <input type="radio" name="dijkstraQuestion8" value="D"> D) None of the above
+        </div>
+        <div class="question">9. What happens when Dijkstra's Algorithm encounters a node for the second time?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion9" value="A"> A) It discards the path<br>
+            <input type="radio" name="dijkstraQuestion9" value="B"> B) It updates the path if shorter<br>
+            <input type="radio" name="dijkstraQuestion9" value="C"> C) It returns an error<br>
+            <input type="radio" name="dijkstraQuestion9" value="D"> D) It adds to the priority queue
+        </div>
+        <div class="question">10. Which of the following can improve the performance of Dijkstra's Algorithm?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion10" value="A"> A) Using a Fibonacci Heap<br>
+            <input type="radio" name="dijkstraQuestion10" value="B"> B) Using a Binary Heap<br>
+            <input type="radio" name="dijkstraQuestion10" value="C"> C) Using an Array<br>
+            <input type="radio" name="dijkstraQuestion10" value="D"> D) All of the above
+        </div>
+        <div class="question">11. What is the main limitation of Dijkstra's Algorithm?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion11" value="A"> A) It requires a priority queue<br>
+            <input type="radio" name="dijkstraQuestion11" value="B"> B) It cannot handle negative weights<br>
+            <input type="radio" name="dijkstraQuestion11" value="C"> C) It is not efficient for dense graphs<br>
+            <input type="radio" name="dijkstraQuestion11" value="D"> D) All of the above
+        </div>
+        <div class="question">12. In which scenario would Dijkstra's Algorithm not work?</div>
+        <div class="options">
+            <input type="radio" name="dijkstraQuestion12" value="A"> A) Graph with negative weights<br>
+            <input type="radio" name="dijkstraQuestion12" value="B"> B) Graph with positive weights<br>
+            <input type="radio" name="dijkstraQuestion12" value="C"> C) Graph with no edges<br>
+            <input type="radio" name="dijkstraQuestion12" value="D"> D) All of the above
+        </div>
+        <button onclick="calculateScore()">Submit Dijkstra Quiz</button>
+    </div>
+
+    <div id="kruskalQuiz" class="quiz-container">
+        <h2>Kruskal's Algorithm Quiz</h2>
+        <div class="question">1. What is Kruskal's Algorithm used for?</div>
+        <div class="options">
+            <input type="radio" name="kruskalQuestion1" value="A"> A) Finding the minimum spanning tree<br>
+            <input type="radio" name="kruskalQuestion1" value="B"> B) Finding the shortest path<br>
+            <input type="radio" name="kruskalQuestion1" value="C"> C) Sorting a list of numbers<br>
+            <input type="radio" name="kruskalQuestion1" value="D"> D) Clustering data points
+        </div>
+        <div class="question">2. In which case is Kruskal's Algorithm best used?</div>
+        <div class="options">
+            <input type="radio" name="kruskalQuestion2" value="A"> A) Dense graphs<br>
+            <input type="radio" name="kruskalQuestion2" value="B"> B) Sparse graphs<br>
+            <input type="radio" name="kruskalQuestion2" value="C"> C) Directed graphs<br>
+            <input type="radio" name="kruskalQuestion2" value="D"> D) Weighted graphs with negative weights
+        </div>
+        <div class="question">3. Which data structure is used in Kruskal's Algorithm?</div>
+        <div class="options">
+            <input type="radio" name="kruskalQuestion3" value="A"> A) Array<br>
+            <input type="radio" name="kruskalQuestion3" value="B"> B) Stack<br>
+            <input type="radio" name="kruskalQuestion3" value="C"> C) Min-Heap<br>
+            <input type="radio" name="kruskalQuestion3" value="D"> D) Disjoint set (Union-Find)
+        </div>
+        <div class="question">4. What is the main advantage of Kruskal's Algorithm?</div>
+        <div class="options">
+            <input type="radio" name="kruskalQuestion4" value="A"> A) It works with directed graphs<br>
+            <input type="radio" name="kruskalQuestion4" value="B"> B) It is simple to implement<br>
+            <input type="radio" name="kruskalQuestion4" value="C"> C) It handles negative weights<br>
+            <input type="radio" name="kruskalQuestion4" value="D"> D) It can find multiple minimum spanning trees
+        </div>
+        <div class="question">5. Which step is performed first in Kruskal's Algorithm?</div>
+        <div class="options">
+            <input type="radio" name="kruskalQuestion5" value="A"> A) Sort the edges<br>
+            <input type="radio" name="kruskalQuestion5" value="B"> B) Select the smallest edge<br>
+            <input type="radio" name="kruskalQuestion5" value="C"> C) Combine two vertices<br>
+            <input type="radio" name="kruskalQuestion5" value="D"> D) Initialize the graph
+        </div>
+        <div class="question">6. When does Kruskal's Algorithm stop?</div>
+        <div class="options">
+            <input type="radio" name="kruskalQuestion6" value="A"> A) When all edges are processed<br>
+            <input type="radio" name="kruskalQuestion6" value="B"> B) When there are V-1 edges in the spanning tree<br>
+            <input type="radio" name="kruskalQuestion6" value="C"> C) When a cycle is detected<br>
+            <input type="radio" name="kruskalQuestion6" value="A"> D) When the graph is fully connected
+        </div>
+        <div class="question">7. What is the time complexity of Kruskal's Algorithm?</div>
+        <div class="options">
+            <input type="radio" name="kruskalQuestion7" value="A"> A) O(E log E)<br>
+            <input type="radio" name="kruskalQuestion7" value="B"> B) O(V log V)<br>
+            <input type="radio" name="kruskalQuestion7" value="C"> C) O(E + V)<br>
+            <input type="radio" name="kruskalQuestion7" value="D"> D) O(V^2)
+        </div>
+        <div class="question">8. Which of the following statements is true about Kruskal's Algorithm?</div>
+        <div class="options">
+            <input type="radio" name="kruskalQuestion8" value="A"> A) It can find multiple minimum spanning trees<br>
+            <input type="radio" name="kruskalQuestion8" value="B"> B) It cannot handle negative weights<br>
+            <input type="radio" name="kruskalQuestion8" value="C"> C) It requires a complete graph<br>
+            <input type="radio" name="kruskalQuestion8" value="D"> D) It is guaranteed to produce a minimum spanning tree
+        </div>
+        <div class="question">9. In which scenario would Kruskal's Algorithm not work?</div>
+        <div class="options">
+            <input type="radio" name="kruskalQuestion9" value="A"> A) Graph with negative edges<br>
+            <input type="radio" name="kruskalQuestion9" value="B"> B) Graph with positive weights<br>
+            <input type="radio" name="kruskalQuestion9" value="C"> C) Graph with cycles<br>
+            <input type="radio" name="kruskalQuestion9" value="D"> D) All of the above
+        </div>
+        <div class="question">10. What is the key operation in Kruskal's Algorithm?</div>
+        <div class="options">
+            <input type="radio" name="kruskalQuestion10" value="A"> A) Union operation<br>
+            <input type="radio" name="kruskalQuestion10" value="B"> B) Find operation<br>
+            <input type="radio" name="kruskalQuestion10" value="C"> C) Sorting edges<br>
+            <input type="radio" name="kruskalQuestion10" value="D"> D) Both A and B
+        </div>
+        <button onclick="calculateScore()">Submit Krushkal's Quiz</button>
+    </div>
+</body>
+</html>
